@@ -3,9 +3,10 @@
   <div>
     <div class="d-md-flex justify-content-around">
             <div class="container-a d-flex" >
-                <button class="btn btn-primary" v-on:click="menu()" > Menu Principal </button>
-                <button class="btn btn-primary" > Lista de Usuarios </button>
-                <button class="btn btn-primary" v-on:click="turnos()" > Lista de Turnos </button>
+                <button class="btn btn-primary" v-on:click="menu()" > Menu Principal </button> &nbsp;
+                <button class="btn btn-primary" > Lista de Usuarios </button> &nbsp;
+                <button class="btn btn-primary" v-on:click="turnos()" > Lista de Turnos </button> &nbsp;
+                <button type="button" class="btn btn-dark margen" v-on:click="salir()">Salir</button>
                 <br>
                 </div>
              </div>

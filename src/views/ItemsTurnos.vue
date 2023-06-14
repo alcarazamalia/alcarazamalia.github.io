@@ -1,5 +1,15 @@
 <template>
     <div>
+      <br>
+      <div class="d-md-flex justify-content-around">
+            <div class="container-a d-flex" >
+                <button class="btn btn-primary margen" v-on:click="menu()">Menu Principal</button> &nbsp;
+                <button class="btn btn-primary margen" v-on:click="usuarios()" >Lista de Usuarios</button> &nbsp;
+                <button class="btn btn-primary margen" v-on:click="turnos()" >Lista de Turnos</button> &nbsp;
+                <button type="button" class="btn btn-dark margen" v-on:click="salir()">Salir</button>
+                <br>
+                </div>
+             </div>
       <Header />
         <div class="container">
             <form action="" class="form-horizontal">
@@ -31,12 +41,6 @@
                 </div>
                 <div class="form-group left row">
                      <div class="col">
-                        <label for="" class="control-label col-sm-2">Genero</label>
-                        <div class="col-sm-7">
-                            <input type="text" class="form-control" name="genero" id="genero" v-model="form.genero">
-                        </div>
-                      </div>
-                     <div class="col">
                           <label for="" class="control-label col-sm-2">Telefono</label>
                           <div class="col-sm-7">
                               <input type="text" class="form-control" name="phone" id="phone" v-model="form.phone">
@@ -47,7 +51,6 @@
                 <div class="form-group">
                   <button type="button" class="btn btn-primary" v-on:click="editar()" >Editar</button>
                   <button type="button" class="btn btn-danger margen" v-on:click="eliminar()" >Eliminar</button>
-                  <button type="button" class="btn btn-dark margen" v-on:click="salir()"  >Salir</button>
                 </div> 
             </form>
         </div>
