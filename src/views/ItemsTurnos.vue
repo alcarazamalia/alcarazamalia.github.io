@@ -1,6 +1,5 @@
 <template>
     <div>
-      <br>
       <div class="d-md-flex justify-content-around">
             <div class="container-a d-flex" >
                 <button class="btn btn-primary margen" v-on:click="menu()">Menu Principal</button> &nbsp;
@@ -59,8 +58,6 @@
 
 </template>
 <script>
-//import SiteHeader from '@/components/SiteHeader.vue';
-//import Footer from '@/components/Footer.vue';
 import axios from 'axios';
 export default {
 name:"ItemsTurnos",

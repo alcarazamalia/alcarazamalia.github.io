@@ -10,14 +10,18 @@
                 <br>
             </div> 
     </div>
+    <SEction> 
+        <button class="btn btn-primary margen" v-on:click="getWeatherData()">Ver Clima</button>
+
+    </SEction>
     </div>
     
 </template>
 <script>
-//import axios from 'axios';
+import axios from 'axios';
 export default {
     name:"HomeView",
-    
+     
     methods:{
             usuarios(){
                 this.$router.push('/usuarios-view');
@@ -25,8 +29,26 @@ export default {
             turnos(){
                 this.$router.push('/turnos-view');
             }
-    },
+            ,
+    
+           getWeatherData() {
+            const apiKey = '75d464219cab61ebab7a8d7575dd4616';
+            const city = 'ROSARIO';
+           const apiUrl =  `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+           // 'http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}';
 
+              axios.get(apiUrl)
+             .then(response => {
+           // Procesa los datos de respuesta aquí
+            console.log(response.data);
+           })
+          .catch(error => {
+         // Maneja los errores aquí
+          console.error(error);
+            });
+  }
+}
+    
 }
 </script>
 <style  scoped>

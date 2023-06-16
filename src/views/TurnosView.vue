@@ -64,7 +64,14 @@ export default {
   mounted:function(){
       let datos = "http://turnostaller.dnsalias.com:28090/b2/api/v1/turnos/?fecha=20230801";
       axios.get(datos).then( data =>{
-          this.ListTurnos = data.data;
+        if (data.status==200){
+            localStorage.token = data.data.accesToken;
+            localStorage.Authorization = data.data.Authorization;
+            this.ListTurnos = data.data;
+        }else {
+            alert("Error al cargar los turnos");            
+        }
+        
       });
   }
 
